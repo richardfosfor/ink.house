@@ -1,0 +1,419 @@
+@font-face {
+  font-family: 'Raleway';
+  src: url("public/fonts/raleway-medium/Raleway-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url("public/fonts/raleway-bold/Raleway-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: bold;
+
+}
+
+
+
+/**
+  Нормализация блочной модели
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/**
+   Убираем внутренние отступы слева тегам списков,
+   у которых есть атрибут class
+  */
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
+   Убираем внешние отступы body и двум другим тегам,
+   у которых есть атрибут class
+  */
+body,
+:where(blockquote, figure):where([class]) {
+  margin: 0;
+}
+
+/**
+   Убираем внешние отступы вертикали нужным тегам,
+   у которых есть атрибут class
+  */
+:where(h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol,
+  dl):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+/**
+   Убираем стандартный маркер маркированному списку,
+   у которого есть атрибут class
+  */
+:where(ul[class]),
+:where(li[class]) {
+  list-style: none;
+}
+
+
+/**
+   Упрощаем работу с изображениями
+  */
+img {
+  display: block;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+/**
+   Наследуем свойства шрифт для полей ввода
+  */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  /**
+     Пригодится в большинстве ситуаций
+     (когда, например, нужно будет "прижать" футер к низу сайта)
+    */
+  height: 100%;
+  /**
+     Плавный скролл
+    */
+  scroll-behavior: smooth;
+}
+
+body {
+  /**
+     Пригодится в большинстве ситуаций
+     (когда, например, нужно будет "прижать" футер к низу сайта)
+    */
+  min-height: 100%;
+  /**
+     Унифицированный интерлиньяж
+    */
+  line-height: 1.5;
+}
+
+svg *[fill] {
+  fill: currentColor
+}
+
+svg *[stroke] {
+  stroke: currentColor
+}
+
+/**
+   Удаляем все анимации и переходы для людей,
+   которые предпочитают их не использовать
+  */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root {
+  --color-green-light: #E1EDE6;
+  --color-green-light-alternate: #D4E8D9;
+  --color-green-meduim: #598D66;
+  --color-green-accent: #376B44;
+  --color-geen-gray: #86928B;
+  --color-green-dark: #2C2D35;
+
+  --color-yellow: #EEDB6D;
+  --color-yellow-light: #FAEB97;
+  --color-yellow-dark: #D9B949;
+
+  --color-white: #fff;
+  --color-white-alternate: #F4F6F5;
+
+  --font-family-base: 'Raleway', sans-serif;
+
+
+  --container-width: 1440px;
+  --container-padding-x: 165px;
+
+
+
+}
+
+body {
+  font-family: var(--font-family-base);
+}
+
+a {
+  font-size: 20px;
+}
+
+a,
+svg {
+  color: var(--color-green-dark);
+}
+
+a:hover,
+svg:hover {
+  color: var(--color-green-meduim);
+}
+
+a:focus,
+svg:focus {
+  color: var(--color-green-meduim);
+  background-color: var(--color-green-light-alternate);
+
+}
+
+a:active,
+svg:active {
+  color: var(--color-green-accent);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 500;
+}
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+.container {
+  width: var(--container-width);
+
+}
+
+
+.header {
+  min-height: 100px;
+  background-color: var(--color-green-light);
+   display: flex;
+  align-items: center;
+  column-gap: 495px;
+  padding-inline: 165px;
+  align-items: center;
+  justify-content: center;
+}
+.header-menu{
+  display: flex;
+}
+.header-icon{
+  margin-left: 60px;
+}
+.header-menu-list {
+  display: flex;
+  flex-wrap: nowrap;
+  column-gap: 60px;
+  text-align: center;
+  align-items: center;
+}
+
+.header-logo {
+
+  text-align: center;
+  padding-block: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  color: var(--color-green-meduim);
+}
+
+.header-logo::before {
+  content: "";
+  display: inline-block;
+  position: relative;
+  width: 35px;
+  aspect-ratio: 1;
+  background: url("public/image/star-1.svg") no-repeat;
+  margin-right: 8px;
+}
+
+.header-menu-link {
+  text-decoration: none;
+}
+.header-burger-button{
+  display: none;
+  
+}
+.green-button.border-none{
+  border: none;
+  background-color: transparent;
+}
+.header-checkbox{
+  display: none;
+}
+.section-products {
+  display: flex;
+  align-items: center;
+  column-gap: 30px;
+  padding-inline: 165px;
+}
+
+.products-title {
+  color: var(--color-green-dark);
+}
+
+.title-green {
+  color: var(--color-green-meduim);
+}
+
+
+
+.section-products-image {
+  min-width: 540px;
+  min-height: 621px;
+}
+.close-button, .close{
+  display: none;
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+
+  .header {
+    column-gap: 101px;
+    padding-inline: 39px;
+  }
+
+  .header-menu-link {
+    font-size: 18px;
+
+  }
+}
+@media (max-width: 576px) {
+  .container {
+    max-width: 576px;
+  }
+  .header{
+display: grid;
+padding-inline: 29px;
+
+  }
+.header-logo{
+  flex-wrap: wrap;
+  padding-top: 16px;
+  padding-bottom: 0;
+}
+.header-menu-list{
+  padding-bottom: 17.5px;
+}
+  .header-logo::after{
+    display: block;
+    content:"";
+    background-color: #C3D1C6;
+    width: 510px;
+    height: 1px;
+    margin-block: 15px;
+  }
+  
+}
+@media (max-width: 320px){
+  .container{
+    max-width: 320px;
+    background-color: var(--color-white);
+
+  }
+  .header-burger-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .header{
+    background-color: var(--color-white);
+  }
+  .header-logo::after{
+    display: none;
+  }
+  .header-icon{
+    margin-left: 236px;
+  }
+
+  .header-checkbox{
+    display: none;
+  }
+.header-menu-list{
+  height: 0;
+  overflow: hidden;
+}
+.header-checkbox:checked + .nav-list .header-menu-list{
+  height: 100%;
+  width: 100vh;
+  flex-direction: column;
+  align-items: start;
+  background-color: var(--color-green-light);
+  padding-inline: 0;
+  padding-top: 76px;
+}
+
+
+.header-menu-item{
+padding-left: 15px;
+}
+.header-menu-item:not(:last-child){
+  padding-bottom: 50px;
+}
+
+.header-menu-list{
+  position: relative;
+  top: 0;
+  padding-bottom: 0;
+  
+}
+.nav-list{
+  position: fixed;
+  left: 0;
+}
+
+
+/*.close-button{
+  padding-top: 16px;
+  padding-left: 17px;
+  display: block;}*/
+
+
+
+
+ 
+
+  }

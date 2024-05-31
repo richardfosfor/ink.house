@@ -1,0 +1,54 @@
+:root {
+    --border-radius: 20px;
+    --border-green: 1px solid var(--color-green-meduim);
+    --boder-yellow: 1px solid var(--color-green-dark);
+    --transition-duration: 0.2s;
+
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    width: 227px;
+    height: 65px;
+    font-size: 20px;
+    font-weight: 500px;
+}
+
+.green-button{
+    color: var(--color-green-meduim);
+    background-color: var(--color-white);
+    border: var(--border-green);
+}
+
+.green-button:hover {
+    color: var(--color-white-alternate);
+    background-color: var(--color-green-meduim);
+}
+
+.green-button:focus {
+    color: var(--color-green-meduim);
+    background-color: var(--color-green-light-alternate);
+}
+
+.green-button:active {
+    color: var(--color-green-medium);
+    background-color: var(--color-green-meduim-accent);
+}
+
+.yellow-button{
+    color: var(--color-green-dark);
+    background-color: var(--color-yellow);
+}
+.yellow-button:hover{
+    color: var(--color-green-dark);
+    background-color: var(--color-yellow-light);
+}
+.yellow-button:focus{
+    border: var(--boder-yellow);
+}
+ .yellow-button:active{
+    background-color: var(--color-yellow-dark);
+} 
