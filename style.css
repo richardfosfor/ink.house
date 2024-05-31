@@ -348,7 +348,7 @@ h5 {
     padding-bottom: 17.5px;
     position: relative;
   }
-
+  
 
   .header-logo::after {
     display: block;
@@ -419,6 +419,12 @@ h5 {
     top: 0;
     padding-bottom: 0;
 
+  }
+
+  .close-nav-menu-button {
+    position: absolute;
+    top: 15px;
+    left: 15px;
   }
 
   .nav-list {
