@@ -309,8 +309,7 @@ h5 {
   min-width: 540px;
   min-height: 621px;
 }
-
-.close-nav-menu-button {
+.close-nav-menu-button{
   display: none;
 }
 
@@ -352,7 +351,7 @@ h5 {
     padding-bottom: 17.5px;
     position: relative;
   }
-  
+
 
   .header-logo::after {
     display: block;
@@ -382,20 +381,17 @@ h5 {
   .header {
     background-color: var(--color-white);
   }
-
-  .header-menu {
+  .header-menu{
     background-color: var(--color-green-light);
     min-width: 320px;
     min-height: 68px;
     align-items: center;
     padding-inline: 15px;
   }
-
-  .header-logo {
-    padding-top: 17px;
-    padding-bottom: 16px;
-  }
-
+.header-logo{
+  padding-top: 17px;
+  padding-bottom: 16px;
+}
   .header-logo::after {
     display: none;
   }
@@ -420,16 +416,15 @@ h5 {
     align-items: start;
     background-color: var(--color-green-light);
     padding-inline: 0;
-
+  
     margin-top: 250px;
   }
-
-  .close-nav-menu-button {
-    padding-top: 16px;
-    padding-left: 15px;
-    padding-bottom: 30px;
-    display: block;
-  }
+.close-nav-menu-button{
+  padding-top: 16px;
+  padding-left: 15px;
+  padding-bottom: 30px;
+  display: block;
+}
 
   .header-menu-item {
     padding-left: 15px;
@@ -442,14 +437,8 @@ h5 {
   .header-menu-list {
     position: relative;
     top: 0;
+    
 
-
-  }
-
-  .close-nav-menu-button {
-    position: absolute;
-    top: 15px;
-    left: 15px;
   }
 
   .nav-list {
